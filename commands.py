@@ -28,6 +28,6 @@ def execute_command(command: str) -> str:
 
 
 if __name__ == "__main__":
-    cmd = "python -m pylint app.py"
+    cmd = "python -m pylint app_before_lint_fix.py"
     result = execute_command(cmd)
     print(result)

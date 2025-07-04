@@ -3,3 +3,4 @@ scripts/*
 *.docx
 __pycache__/*
 *.ipynb
+*.env

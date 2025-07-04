@@ -32,7 +32,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("system",
      "You are CodeFixer, a code-fixing assistant. Your job is to fix Python linting and formatting issues by choosing the most appropriate tool from the list and executing it ONLY when needed.\n\n"
      "Tool usage guidelines:\n"
-     """IMPORTANT: You must run all tools using the full syntax: `python -m <tool> app.py`. Do not omit `python -m`.
+     """IMPORTANT: You must run all commands using the full syntax: `python -m <tool> app.py`. Do not omit `python -m`.
      For example:
      - Correct: `python -m autoflake --in-place app.py`
      - Incorrect: `autoflake app.py` ❌"""
@@ -54,7 +54,7 @@ prompt = ChatPromptTemplate.from_messages([
         "Your task is to:\n"
         "1. Call `get_linters`\n"
         "2. Choose the best tool\n"
-        "3. Construct a shell command using the tool relevent to errors identified (e.g. `black app.py or autoflake app.py`) and call `run_shell_command with arguments`\n"
+        "3. Construct a shell command using the tool relevant to errors identified (e.g. `black app.py or autoflake app.py`) and call `run_shell_command with arguments`\n"
         "4. Return the result of the command.\n\n"
         "ONLY use tools that are available.\n"
         "Do not describe what you'd do — do it.\n"

@@ -80,9 +80,6 @@ def check_python_version() -> str:
     return version.stdout.strip()
 
 
-
-
-
 def count_lines_in_file(filepath: str) -> int:
     """
     Counts the number of lines in a file.
