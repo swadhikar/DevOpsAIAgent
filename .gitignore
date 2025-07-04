@@ -1,0 +1,5 @@
+scripts/*
+*.xlsx
+*.docx
+__pycache__/*
+*.ipynb
