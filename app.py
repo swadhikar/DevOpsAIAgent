@@ -1,7 +1,6 @@
 import os
 import subprocess
-import json
-import datetime
+import json, datetime
 
 
 def classify_log(log: str) -> dict:
@@ -33,7 +32,11 @@ def classify_log(log: str) -> dict:
         summary = "Could not identify a specific failure pattern."
         suggested_fix = "Review the full log manually."
 
-    return {"error_type": error_type, "summary": summary, "suggested_fix": suggested_fix}
+    return {
+        "error_type": error_type,
+        "summary": summary,
+        "suggested_fix": suggested_fix,
+    }
 
 
 def get_absolute_path(directory: str) -> str:
@@ -48,7 +51,7 @@ def get_absolute_path(directory: str) -> str:
     """
     if os.path.exists(directory):
         return os.path.abspath(directory)
-    return 'not found'
+    return "not found"
 
 
 def summarize_directory_contents(path: str) -> list:
@@ -78,9 +81,6 @@ def check_python_version() -> str:
     """
     version = subprocess.run(["python", "--version"], capture_output=True, text=True)
     return version.stdout.strip()
-
-
-
 
 
 def count_lines_in_file(filepath: str) -> int:
@@ -173,4 +173,8 @@ def extract_imports(code_text: str) -> list:
         list: A list of import statements.
     """
     lines = code_text.splitlines()
-    return [line for line in lines if line.strip().startswith("import") or line.strip().startswith("from")]
+    return [
+        line
+        for line in lines
+        if line.strip().startswith("import") or line.strip().startswith("from")
+    ]

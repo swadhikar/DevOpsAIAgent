@@ -1,7 +1,5 @@
-import os
-import subprocess
-import json
-import datetime
+import os, re, subprocess
+import json, datetime
 
 
 def classify_log(log: str) -> dict:
