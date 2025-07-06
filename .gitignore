@@ -1,4 +1,3 @@
-scripts/*
 *.xlsx
 *.docx
 __pycache__/*
